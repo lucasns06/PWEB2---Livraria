@@ -13,7 +13,7 @@ public class Main {
         meuLivro.titulo = "Harry potter";
         meuLivro.autor = "wolf";
         meuLivro.editora = rocco;
-        meuLivro.paginas = 464;
+        meuLivro.setPaginas(464);
         meuLivro.resumo = "As aventuras do harry potter e a busca das pedrinhas do crack filosoficas ";
         meuLivro.tipoCapa = "Comum";
         meuLivro.valor = 34.99;
@@ -34,11 +34,17 @@ public class Main {
         livroFavorito.titulo = "O Jogador Número 1";
         livroFavorito.autor = "Ernest Cline";
         livroFavorito.editora = Leya;
-        livroFavorito.paginas = 464;
+        livroFavorito.setPaginas(464);
         livroFavorito.resumo = "Um mundo em jogo, a busca pelo grande prêmio. Você está preparado, Jogador número 1? O ano é 2044 e a Terra não é mais a mesma. ";
         livroFavorito.tipoCapa = "Comum";
         livroFavorito.valor = 20;
 
         livroFavorito.exibirDadosLivro();
+        double desconto = livroFavorito.aplicarDesconto(5);
+        System.out.println("Desconto: " + desconto);
+        System.out.println("Valor total: " + (livroFavorito.valor-desconto));
+
+        Livro teste = new Livro("uel uel");
+        System.out.println(teste.titulo);
     }
 }

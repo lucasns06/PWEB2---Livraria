@@ -1,14 +1,35 @@
 public class Livro
 {
     //Atributos
-
     public String titulo;
     public String autor;
     public double valor;
     public Editora editora;
-    public int paginas;
+    private int paginas;
     public String resumo;
     public String tipoCapa;
+
+    //modificadores de acesso
+
+    //get => retornar a informação
+    public int getPaginas()
+    {
+        return this.paginas;
+    }
+    //set
+    public void setPaginas(int paginas)
+    {
+        if(paginas > 0)
+            this.paginas = paginas;
+
+    }
+
+    //construtores
+    public Livro(){} //Construtor padrão (vazio)
+    public Livro(String titulo)
+    {
+        this.titulo = titulo;
+    }
 
     //Métodos
     public void exibirDadosLivro(){
@@ -28,5 +49,14 @@ public class Livro
             return false;
         else
             return true;
+        /*
+            SIMPLIFICADO.
+            return editora != null;
+        */
+    }
+
+    public double aplicarDesconto(double porcentagemDesconto)
+    {
+        return  this.valor + porcentagemDesconto/100;
     }
 }
