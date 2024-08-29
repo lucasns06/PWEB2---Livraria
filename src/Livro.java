@@ -7,7 +7,7 @@ public class Livro
     public Editora editora;
     private int paginas;
     public String resumo;
-    public String tipoCapa;
+    public TipoCapaEnum tipoCapa;
 
     //modificadores de acesso
 
@@ -21,16 +21,23 @@ public class Livro
     {
         if(paginas > 0)
             this.paginas = paginas;
-
     }
-
     //construtores
     public Livro(){} //Construtor padrão (vazio)
     public Livro(String titulo)
     {
         this.titulo = titulo;
     }
-
+    public Livro(String titulo, String autor, double valor, Editora editora, int paginas, String resumo, TipoCapaEnum tipoCapa)
+    {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.valor = valor;
+        this.editora = editora;
+        this.paginas = paginas;
+        this.resumo = resumo;
+        this.tipoCapa = tipoCapa;
+    }
     //Métodos
     public void exibirDadosLivro(){
         System.out.println("===============================");
@@ -39,6 +46,7 @@ public class Livro
         System.out.println("Preço: " + valor);
         System.out.println("Paginas: " + paginas);
         System.out.println("Autor: " + autor);
+        System.out.println("Capa: " + TipoCapaEnum.COMUM);
         if(temEditora()==true)
            editora.exibirEditora();
         System.out.println("===============================");
