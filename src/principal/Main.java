@@ -1,3 +1,9 @@
+package principal;
+
+import enums.TipoCapaEnum;
+import model.Editora;
+import model.Livro;
+
 public class Main {
     public static void main(String[] args)
     {
@@ -19,17 +25,14 @@ public class Main {
         meuLivro.valor = 34.99;
 
         meuLivro.exibirDadosLivro();
-        /*System.out.println(meuLivro.titulo + " \nEscrito por " + meuLivro.autor + " \nCusta "
-                + meuLivro.valor + " reais" + "\nPublicado por " + meuLivro.editora.nome + "\nTem "
-                + meuLivro.paginas + " paginas");
-        */
-        //Livro2
 
+        //instanciar o objeto/classe e difinir os atributos (editora)
         Editora Leya = new Editora();
         Leya.nome = "Leya";
         Leya.email = "adm@Leya.com";
         Leya.site = "Leya.com";
 
+        //instanciar o objeto/classe e difinir os atributos (livro)
         Livro livroFavorito = new Livro();
         livroFavorito.titulo = "O Jogador Número 1";
         livroFavorito.autor = "Ernest Cline";
@@ -39,6 +42,7 @@ public class Main {
         livroFavorito.tipoCapa = TipoCapaEnum.COMUM;
         livroFavorito.valor = 20;
 
+        //executa um método que tem a exibição para o usuário
         livroFavorito.exibirDadosLivro();
         double desconto = livroFavorito.aplicarDesconto(5);
         System.out.println("Desconto: " + desconto);

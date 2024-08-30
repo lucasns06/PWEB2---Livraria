@@ -1,3 +1,6 @@
+package model;
+import enums.TipoCapaEnum;
+
 public class Livro
 {
     //Atributos
@@ -16,18 +19,22 @@ public class Livro
     {
         return this.paginas;
     }
+
     //set
     public void setPaginas(int paginas)
     {
         if(paginas > 0)
             this.paginas = paginas;
     }
+
     //construtores
-    public Livro(){} //Construtor padrão (vazio)
+    public Livro(){}//Construtor padrão (vazio)
+
     public Livro(String titulo)
     {
         this.titulo = titulo;
     }
+
     public Livro(String titulo, String autor, double valor, Editora editora, int paginas, String resumo, TipoCapaEnum tipoCapa)
     {
         this.titulo = titulo;
